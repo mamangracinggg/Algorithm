@@ -46,7 +46,7 @@ int main(){
   p1.price = 10;
 	p2.brand = "iphone";
   p2.price = 30;
-
+// This is a PR test
 	return 0;
 }
 
