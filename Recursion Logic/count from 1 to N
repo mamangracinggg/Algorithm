@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+void counting(int n){
+    if(n == 0)return;
+    else{
+        counting(n-1);
+        printf("%d\n", n);
+    }
+}
+
+int main(){
+    counting(10);
+    return 0;
+}
