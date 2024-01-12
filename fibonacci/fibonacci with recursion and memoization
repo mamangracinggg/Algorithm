@@ -1,0 +1,28 @@
+#include<stdio.h>
+#define ll long long
+#define SIZE 100000
+
+ll memo[SIZE];
+ll res;
+ll fib(ll n){
+    if(memo[n] != -1){
+        return memo[n];
+    }
+    if(n <= 1){
+        res = n;
+    }else{
+        res = fib(n-1) + fib(n-2);
+    }
+    memo[n] = res;
+    return res;
+}
+
+int main(){
+    for(int i = 0; i < SIZE; i++){
+        memo[i] = -1;
+    }
+    ll n;
+    scanf("%lld", &n);
+    printf("%lld", fib(n));
+    return 0;
+}
