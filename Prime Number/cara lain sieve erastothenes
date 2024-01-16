@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+#define SIZE 1000000
+
+int prima[SIZE];
+
+void sieve(){
+    for(int i = 2; i*i < SIZE; i++){
+        if(prima[i] == 1){
+            for(int j = i*i; j < SIZE; j+=i){
+                prima[j] = 0;
+            }
+        }
+    }
+}
+
+int main(){
+     //set 
+    for(int i = 0; i < SIZE; i++){
+        prima[i] = 1;
+    }
+    
+    int N;
+    scanf("%d", &N);
+  
+    sieve();
+    
+    if(prima[N] == 1){
+        printf("prima");
+    }else{
+        printf("bukan prima");
+    }
+    return 0;
+}
